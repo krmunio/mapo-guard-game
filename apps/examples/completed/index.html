@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2f80ed">
+    <title>마포 수호대 미니게임</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="mission-board">
+        <p class="eyebrow">MAPO GUARD · 오늘의 임무</p>
+        <h1 id="game-title">마포 수호대</h1>
+        <p id="mission-text" class="mission-text">마포를 깨끗하게 만들자!</p>
+      </header>
+
+      <section class="status-bar" aria-label="게임 상태">
+        <div class="status-item">
+          <span class="status-label">현재 점수</span>
+          <strong><span id="score">0</span>점</strong>
+        </div>
+        <div class="status-item status-item--goal">
+          <span class="status-label">목표 점수</span>
+          <strong><span id="goal-score">50</span>점</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">남은 목표</span>
+          <strong><span id="remaining-targets">5</span>개</strong>
+        </div>
+      </section>
+
+      <section id="game-stage" class="game-stage location-hangang" aria-label="한강공원 게임 무대">
+        <div class="sky" aria-hidden="true">
+          <span class="cloud cloud--one"></span>
+          <span class="cloud cloud--two"></span>
+          <span class="sun"></span>
+        </div>
+        <div class="place-sign">
+          <span aria-hidden="true">📍</span>
+          <span id="location-name">한강공원</span>
+        </div>
+
+        <div id="targets" class="targets" aria-label="치워야 할 목표물"></div>
+
+        <div class="character-zone">
+          <button id="character" class="character" type="button" aria-label="초록색 로봇으로 쓰레기 치우기">
+            <span id="character-emoji" class="character-emoji" aria-hidden="true">🤖</span>
+            <span id="character-name" class="character-name">초록 로봇</span>
+          </button>
+          <p id="action-hint" class="action-hint">로봇을 눌러 쓰레기를 치워요!</p>
+        </div>
+
+        <div id="celebration" class="celebration" role="status" aria-live="polite" hidden>
+          <div class="sparkles" aria-hidden="true">★ ✦ ★ ✦ ★</div>
+          <strong>마포 수호대 임무 성공!</strong>
+          <span>우리가 마포를 더 멋지게 만들었어요.</span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="게임 조작">
+        <p id="game-status" class="game-status" aria-live="polite">캐릭터를 눌러 임무를 시작하세요.</p>
+        <button id="reset-button" class="reset-button" type="button">
+          <span aria-hidden="true">↻</span>
+          다시 시작
+        </button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
